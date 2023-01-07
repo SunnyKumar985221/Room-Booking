@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.42e8a65a.css",
+    "main.js": "/static/js/main.302ef410.js",
+    "static/js/787.71df535f.chunk.js": "/static/js/787.71df535f.chunk.js",
+    "static/media/mumbai.jpg": "/static/media/mumbai.3b6e8a7870f8a6f8e1b7.jpg",
+    "static/media/banglore.jpg": "/static/media/banglore.7c2262646d6054293875.jpg",
+    "static/media/head.jpg": "/static/media/head.6205f7931ca177471a0c.jpg",
+    "static/media/patna.jpg": "/static/media/patna.ed950acc31d957ead3f3.jpg",
+    "static/media/pune.jpg": "/static/media/pune.92ff36561ad12251b7b5.jpg",
+    "static/media/delhi.jpg": "/static/media/delhi.4df1f3d9d510172a2579.jpg",
+    "static/media/indore.jpg": "/static/media/indore.7af08705e560ed63ef7a.jpg",
+    "index.html": "/index.html",
+    "main.42e8a65a.css.map": "/static/css/main.42e8a65a.css.map",
+    "main.302ef410.js.map": "/static/js/main.302ef410.js.map",
+    "787.71df535f.chunk.js.map": "/static/js/787.71df535f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42e8a65a.css",
+    "static/js/main.302ef410.js"
+  ]
+}
