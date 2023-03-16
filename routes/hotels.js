@@ -1,6 +1,38 @@
 const express = require("express");
 const router = express.Router();
 const Hotel = require('../Database/models/Hotels.js')
+
+// For Getting all data
+router.get('/', async (req, res) => {
+    const { min, max, ...others } = req.query;
+    try {
+        // const allhotel = await Hotel.find(req.query).limit(req.query.limit)
+        const allhotel = await Hotel.find({ ...others, cheapestprice: { $gt: min | 1, $lt: max | 999 } }).limit(req.query.limit)
+        res.status(200).json(allhotel);
+        console.log(allhotel);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+});
+
+// For Hotels by cityies name
+router.get('/countByCity', async (req, res) => {
+    const cities = req.query.cities.split(",");
+    // since we have to find the document according to all cities so we have to use Promise.all();
+    try {
+        const list = await Promise.all(cities.map( (items) => {
+            return (
+                Hotel.countDocuments({ city: items })
+            )
+        }
+        ))
+        res.status(200).json(list);
+        console.log("Here is the list");
+    } catch (error) {
+        res.status(500).json(error);
+    }
+});
+
 router.post('/', async (req, res, next) => {
     try {
         const newHotel = new Hotel(req.body);
@@ -13,19 +45,17 @@ router.post('/', async (req, res, next) => {
 })
 router.put('/:id', async (req, res) => {
     try {
-
         const updatedHotel = await Hotel.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true })
         res.status(200).json(updatedHotel);
         console.log(saveHotel);
     } catch (error) {
-        res.status(500).json(error);
+        next(error);
     }
 })
 
 // For Deleting Particular single Hotl
 router.delete('/:id', async (req, res) => {
     try {
-
         const deletedHotel = await Hotel.findByIdAndDelete(req.params.id)
         res.status(200).json("Hotel Has been deleted");
         console.log(saveHotel);
@@ -45,30 +75,9 @@ router.get('/find/:id', async (req, res) => {
     }
 })
 
-// For Getting all data
-router.get('/', async (req, res) => {
-    const { min, max, ...others } = req.query;
-    try {
-        // const allhotel = await Hotel.find(req.query).limit(req.query.limit)
-        const allhotel = await Hotel.find({ ...others, cheapestprice: { $gt: min | 1, $lt: max | 999 } }).limit(req.query.limit)
-        res.status(200).json(allhotel);
-        console.log(allhotel);
-    } catch (error) {
-        res.status(500).json(error);
-    }
-});
-router.get('/countByCity', async (req, res) => {
-    const cities = req.query.cities.split(",");
-    try {
-        const list = await Promise.all(cities.map(city => {
-            return Hotel.countDocuments({ city: city })
-        }))
-        res.status(200).json(list);
-        console.log(list);
-    } catch (error) {
-        res.status(500).json(error);
-    }
-});
+
+
+
 router.get('/countByType', async (req, res) => {
     try {
         const hotelcount = await Hotel.countDocuments({ type: "hotel" });
@@ -86,5 +95,4 @@ router.get('/countByType', async (req, res) => {
         res.status(500).json(error);
     }
 });
-// router.get('/countByType')
 module.exports = router;

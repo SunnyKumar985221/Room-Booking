@@ -16,20 +16,20 @@ const Footer = () => {
 
       <div class="footer-center">
 
-        <div>
+        {/* <div>
           <i class="fa fa-map-marker"></i>
           <p><span>Kankarbagh</span>Patna, Bihar</p>
-        </div>
+        </div> */}
 
-        <div>
+        {/* <div>
           <i class="fa fa-phone"></i>
           <p>9852211257</p>
-        </div>
+        </div> */}
 
-        <div>
+        {/* <div>
           <i class="fa fa-envelope"></i>
           <p><a href="mailto:sunnyrajpcs84@gmail.com">Hotel Nexus</a></p>
-        </div>
+        </div> */}
 
       </div>
 

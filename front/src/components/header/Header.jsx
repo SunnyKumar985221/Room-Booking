@@ -10,6 +10,9 @@ import { useNavigate } from "react-router-dom";
 import { SearchContext } from "../../context/SearchContext";
 import { AuthContext } from "../../context/AuthContext";
 import { useReducer } from "react";
+
+
+
 const Header = ({ type }) => {
   const [destination, setDestination] = useState();
   const [openDate, setOpenDate] = useState(false);

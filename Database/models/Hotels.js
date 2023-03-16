@@ -51,7 +51,9 @@ featured:{
     type:Boolean,
     default: false,   
 }
-});
+},{
+    timestamps: true,
+  });
 
-const Hotel = new mongoose.model('Hotel',HotelSchema);
+const Hotel = new mongoose.model('Hotel', HotelSchema);
 module.exports = Hotel;

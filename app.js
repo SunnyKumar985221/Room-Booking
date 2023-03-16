@@ -12,11 +12,15 @@ dotenv.config({ path: './configfile.env' });
 require('./Database/conn');
 const PORT = process.env.PORT || 8000;
 const cookieParser = require('cookie-parser');
+// app.use(express.static(__dirname + './upload'/));
+app.use("/uploads",express.static('./uploads'));
 app.use(cookieParser());
 app.use('/auth', require('./routes/auth.js'));
 app.use('/rooms', require('./routes/rooms.js'));
-app.use('/user', require('./routes/user.js'));
+app.use('/users', require('./routes/user.js'));
 app.use('/hotels', require('./routes/hotels.js'));
+
+
 // error handling middleware 
 app.use((err, req, res, next) => {
     const errorStatus = err.status || 500;
@@ -29,13 +33,14 @@ app.use((err, req, res, next) => {
     })
 });
 
+
+
 app.use(express.static(path.join(__dirname, "./front/build")));
 app.get("*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "front/build/index.html"));
 });
 
 
-
-app.listen(PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log(`Connected to port no. ${PORT}`)
 })
