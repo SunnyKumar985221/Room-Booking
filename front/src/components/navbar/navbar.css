@@ -1,80 +1,25 @@
 body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 .navbar {
   background-color: #1a1d2b;
-  position: sticky;
-  top:0px;
-  z-index: 2;
+  border-top: 3px solid #3d5865;
 }
-.userprofile{
-  background-color: #111;
-  color:#9fd5da;
-  font-size: 25px;
-}
-.mobilemenu {
-  background-color: #8a9696;
-  height: 100vh;
-  display: none;
-}
-.mobilemenubar {
-  position: relative;
-}
-.mobilemenu li {
+ul {
   list-style-type: none;
-  padding: 0px;
-  margin:0px;
-}
-.offer{
-  background: #ff5722;
-    border-radius: 80%;
-    padding: 10px 20px;
-    border: 1px solid #9c6719;
-    color: #cddc39;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.navbarMobile {
-  background-color: #1a1d2b;
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 20px;
-  align-items: center;
-  display: none;
-  position: sticky;
-  top:0px;
-  z-index: 2;
-}
-.web {
-  position: relative;
-  list-style-type: none;
-  margin:0px;
-  height: 80px;
   background-color: #3d5865;
+  margin-top: -1px;
   display: flex;
   justify-content: center;
   gap: 15px;
-  /* clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%); */
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
 }
 
 li {
   margin-top: 15px;
-  position: relative;
 }
-.notificationIcon{
-  color: #ffeb3b;
-  font-size: 20px;
-  background: #307064;
-  padding: 7px 10px;
-  border-radius: 50%;
-  position: relative;
-  top:10px;
-  cursor: pointer;
- 
-}
+
 li a {
   display: block;
   color: white;
@@ -83,7 +28,6 @@ li a {
   text-decoration: none;
   font: normal 16px "Open Sans", cursive;
 }
-
 .username {
   color: #e4ff00;
   font-weight: bold;
@@ -105,20 +49,15 @@ li a:hover {
 
 
 @media only screen and (max-width: 500px) {
-  .mobilemenu{
-    display: block;
+  ul {
+    list-style-type: none;
+    padding: 0 0 0 30%;
+    overflow: hidden;
+    background-color: #3d5865;
+    margin: 0px 10px;
+    height: 40px;
   }
-  .navbarMobile{
-display: flex;
-  }
-  .navbar{
-    display: none;
-  }
-  
 }
-
-
-
 .logo1 {
   color: #ffffff;
   font: normal 36px "Open Sans", cursive;
