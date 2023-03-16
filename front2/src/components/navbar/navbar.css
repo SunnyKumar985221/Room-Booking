@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.navbar {
+  background-color: #1a1d2b;
+  border-top: 3px solid #3d5865;
+}
+ul {
+  list-style-type: none;
+  background-color: #3d5865;
+  margin-top: -1px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 10% 100%);
+}
+
+li {
+  margin-top: 15px;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font: normal 16px "Open Sans", cursive;
+}
+.username {
+  color: #e4ff00;
+  font-weight: bold;
+}
+li:nth-child(1) {
+  margin-top: -15px;
+}
+li:nth-child(1) > .active {
+  background-color: #3d5865;
+}
+li a:hover {
+  background-color: #111;
+  transition: all 0.5s ease;
+}
+
+.active {
+  padding: 15px 30px;
+}
+
+
+@media only screen and (max-width: 500px) {
+  ul {
+    list-style-type: none;
+    padding: 0 0 0 30%;
+    overflow: hidden;
+    background-color: #3d5865;
+    margin: 0px 10px;
+    height: 40px;
+  }
+}
+.logo1 {
+  color: #ffffff;
+  font: normal 36px "Open Sans", cursive;
+  margin: 0;
+}
+.logo2 {
+  color: lightseagreen;
+  font: normal 22px "Open Sans", cursive;
+  font-weight: bold;
+}
+.logo3 {
+  position: relative;
+  left: -50%;
+  top: 10px;
+}
+.active {
+  background-color: #1a1d2b;
+}

@@ -4,6 +4,7 @@ import "./searchItem.css";
 const Searchitem = ({ items }) => {
   return (
     <div className="searchItem">
+      {/* <img src={items.photos[0]} alt="" className="siImg" /> */}
       <div className="siDesc">
         <h1 className="siTitle">{items.name}</h1>
         <span className="siDistance">{items.distance}m from center</span>

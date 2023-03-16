@@ -12,19 +12,19 @@ import HashLoader from "react-spinners/HashLoader";
 import useFetch from "../../hooks/useFetch.js"
 
 const Featured = () => {
-  const { data, loading, error } = useFetch("/hotels/countByCity?cities=Mumbai,Delhi,Banglore,Patna,Pune,Indore")
-  const { dispatch } = useContext(ContextOne)
-  const navigate = useNavigate();
-  const [destination, setDestination] = useState("");
-  const handleSearch = (e) => {
-    dispatch({ type: "TEST", payload: (e.target.name) });
-    navigate("/hotels", { state: { destination } });
+const { data, loading, error } = useFetch("/hotels/countByCity?cities=Mumbai,Delhi,Banglore,Patna,Pune,Indore")
+const {dispatch} = useContext(ContextOne)
+const navigate = useNavigate();
+const [destination, setDestination] = useState("");
+const handleSearch = (e) => {
+dispatch({ type: "TEST", payload: (e.target.name) });
+navigate("/hotels", { state: { destination } });
   };
-
+  
 
   return (<>
     <div className="featured">
-      {loading ? (<HashLoader style={{ margin: "0 auto", display: "block", }} color="#6c33ab" size={100} speedMultiplier={1} />) : (<><div className="featuredItem">
+      {loading ? (<HashLoader style={{margin: "0 auto",display: "block",}} color="#6c33ab" size={100} speedMultiplier={1}/>) : (<><div className="featuredItem">
         <img onClick={handleSearch}
           src={mumbai}
           name="Mumbai"
@@ -42,7 +42,7 @@ const Featured = () => {
           <img onClick={handleSearch}
             src={delhi}
             name="Delhi"
-            onMouseEnter={(e) => setDestination(e.target.name)}
+          onMouseEnter={(e) => setDestination(e.target.name)}
             alt=""
             className="featuredImg"
           />
@@ -55,7 +55,7 @@ const Featured = () => {
           <img onClick={handleSearch}
             src={banglore}
             name="Banglore"
-            onMouseEnter={(e) => setDestination(e.target.name)}
+          onMouseEnter={(e) => setDestination(e.target.name)}
             alt=""
             className="featuredImg"
           />
@@ -84,7 +84,7 @@ const Featured = () => {
           <img onClick={handleSearch}
             src={pune}
             name="Pune"
-            onMouseEnter={(e) => setDestination(e.target.name)}
+          onMouseEnter={(e) => setDestination(e.target.name)}
             alt=""
             className="featuredImg"
           />
@@ -97,7 +97,7 @@ const Featured = () => {
           <img onClick={handleSearch}
             src={indore}
             name="Indore"
-            onMouseEnter={(e) => setDestination(e.target.name)}
+          onMouseEnter={(e) => setDestination(e.target.name)}
             alt=""
             className="featuredImg"
           />
